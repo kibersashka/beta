@@ -17,13 +17,14 @@ public class UserService {
         chekValidateDate(date, time);
         User user = new User(username, date, time, number);
         userRepository.save(user);
+        getBooking(username, date, time, number);
     }
 
     private void chekValidateDate(String date, String time) throws BookedTimeException {
         userRepository.chekValidateDate(date, time);
     }
 
-    public void getBooking(String username, String date, String time, String number) {
+    private void getBooking(String username, String date, String time, String number) {
         System.out.println(new User(username, date, time, number).toString());
     }
 
