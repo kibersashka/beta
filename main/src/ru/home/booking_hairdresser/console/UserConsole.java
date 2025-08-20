@@ -1,5 +1,8 @@
 package ru.home.booking_hairdresser.console;
 
+import ru.home.booking_hairdresser.User.Repository.File.Exception.BookedTimeException;
+import ru.home.booking_hairdresser.User.Service.UserService;
+
 import java.util.Scanner;
 
 public class UserConsole {
@@ -35,7 +38,9 @@ public class UserConsole {
                 userService.signUp(username, date, time, number);
                 System.out.println(username + ", " + "Вы записались на: " + date + " " + time);
                 break;
-            } catch (BookedTimeException e) {}
+            } catch (BookedTimeException e) {
+                System.out.println("Упс! Время занято! Выберите другую дату");
+            }
         }
     }
 }
