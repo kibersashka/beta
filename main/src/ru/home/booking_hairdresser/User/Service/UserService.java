@@ -23,4 +23,11 @@ public class UserService {
         userRepository.chekValidateDate(date, time);
     }
 
+    public void getBooking(String username, String date, String time, String number) {
+        System.out.println(new User(username, date, time, number).toString());
+    }
+
+    public void getFreeTime(){
+
+    }
 }
